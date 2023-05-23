@@ -28,10 +28,8 @@ print(b.lower())
 # 문자열 양쪽 공백을 없애는 함수 : strip()
 a = "   hello world     "
 print(a.strip())
-
 myId = (input("id를 입력해주세요")).strip()   # abc@naver.com
 myPw = input("비밀번호를 입력해주세요")
-
 print("ID는 "+ myId+"이고"+ "비밀번호는"+myPw)
 
 # 문자열 대체 : replace()
@@ -56,7 +54,6 @@ print(b)
 x = int(input('x값 입력'))
 y =2.5*pow(x,2)+3.3*x+6
 print(y)
-
 
 # word1 word2 word3
 a = input('첫번째 문자를 입력해주세요')
