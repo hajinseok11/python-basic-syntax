@@ -6,7 +6,6 @@ print(a)
 # 포맷팅을 왜 쓰는가? 
 # 1) 문자열을 직접 삽입하면 1회성으로 coding할 수 밖에 없지만, 포맷팅은 변수값을 삽입할 수 있다.
 # 2) 따옴표를 여러번 안닫아도 된다.
-
 language = input("좋아하는 언어를 입력하세요")
 times = input("그 언어를 몇번이나 공부하셨나요")
 a = "I studied %s very hard %d times" %(language,int(times))

@@ -11,8 +11,8 @@ print(b)
 
 # multi line으로 문자열을 표현하고 싶으면, 쌍따옴표 3개를 사용하거나 홑따옴표 3개를 사용하면 된다.
 
-# a = """hello 
-# world"""
+a = """hello 
+world"""
 
 # 그렇다면 python's easy 라는 문구를 출력해보자.
 print("python's easy") # 문자에 작은따옴표가 들어갈 때는 큰따옴표를 활용

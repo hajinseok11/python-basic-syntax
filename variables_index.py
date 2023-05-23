@@ -9,5 +9,6 @@ print(a[3])
 # 문자열의 마지막 문자를 출력해보자
 a = "python's fun python's fun python's fun"
 print(a[-1])
+
 # 문자열의 길이를 구하는 함수 len()
 print(a[len(a)-1])
