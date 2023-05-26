@@ -144,4 +144,28 @@ answer = my_string [::-1]
 answer = "".join(reversed(my_string))
 print(answer)
 
+# 최대값 구하기 (for 문 만을 사용)
+lista = [100,20,30,5,90]
+# 위 리스트의 최대값, 최소값을 정렬함수, 최대값 함수 사용x 구하기
+maxa = lista[0]
+mina = lista[0]
+for i in lista:
+    if maxa < i:
+        maxa = i
+    if mina > i :
+        mina = i
+print(maxa)
+print(mina)
+
+# 방법 2 # max min
+maxA = max(lista)
+minA = min(lista)
+
+# 방법 3 # sort
+lista.sort()
+minA = lista[0]
+maxA = lista[len(lista)-1]
+maxA = lista[-1]
+print(minA)
+print(maxA)
 
