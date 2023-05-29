@@ -58,7 +58,6 @@
 #         # continue문을 활용해서 coding
 # print(sum)
 
-
 # 1. 사용자한테 리스트 크기를 입력(3)
 # 2. 리스트 크기 만큼 값을 입력받는것.(3번반복)
 # => 10
@@ -89,7 +88,6 @@ while a < 6 :
     lista.append(randNum)
     a += 1
 print(lista)
-
 
 # for 문의 기본구조
 # for 변수 in 반복가능한 자료형(iterable)
@@ -146,3 +144,103 @@ for a in range(10):
 lista = [a*2 for a in range(10) if a % 2 !=0]
 print(lista)
 
+# 한 반에 수학 점수가 60 이상 합격, 60 미만 불합격
+lista = [90, 25, 67, 45,80]
+# 위 list가 학생의 번호 순서대로 있을때 아래와 같이 출력하도록 코딩
+# ex) 1번 학생은 합격 입니다.
+# ex) 2번 학생은 불합격 입니다.
+# num = 1
+# for i in lista:
+#     if i > 59:
+#         print(' %d 번째 학생은 합격'%num)
+#     else:
+#         print(' %d 번째 학생은 불합격'%num)
+#     num+=1
+
+# for i in range(len(lista)):
+#     if lista[a] > 59:
+#         print(' %d 번째 학생은 합격'% (a+1))
+#     else:
+#         print(' %d 번째 학생은 불합격'% (a+1))
+    
+# for문과 break: for 문에서 break를 반드시 써야하는 상황
+# 혈액형이 a형인 고객 선착순 1명만 찾는 상황
+lista = ['b','b','ab','a','b','a']
+# 출력결과 : 4번째 고객이 이벤트에 당첨되었습니다.
+for a in range(len(lista)):
+    if lista[a] == 'a':
+        answer = a+1
+        # break를 넣고 안넣고 결과값 차이 확인
+        break
+print(str(answer) + "번째 고객이 당첨되었습니다")
+
+# # for문을 이용한 구구단
+# # 5단 결과 출력
+for i in range(1,10):
+    print(f"5 X {i} = {5*i}")
+# 구구단 몇단을 계산해드릴까요? -> 
+# while True 사용
+while True:
+    num = int(input("구구단 몇단을 계산해드릴까요?"))    
+    for i in range(1,10):
+        print(f"{num} X {i} = {num*i}")
+    break
+
+# 2중 for문
+# 구구단을 5단~9단까지 한꺼번에 출력
+# 5X1 = 5
+# ...
+# 9X9 = 81
+num = 5
+while num < 10:
+    for i in range(1,10):
+        print(f"{num} X {i} = {num*i}")
+        num += 1
+
+for num in range(5,10):
+    for a in range(1,10):
+        print(f"{num} X {a} = {num*a}")
+
+
+lista = [10,20,30,40]
+# list[0]와 lista[1]의 자리를 바꾸려면?
+# lista = [20,20,30,40]
+lista [0]= lista[1]
+lista [1]= lista[0]
+# 위 방식은 0번째 값이 소멸됨
+temp = lista[0]
+lista[0] = lista[1]
+lista[1] = temp
+# 위 방법은 값을 잃어버리지 않음
+# 파이썬에서 지원하고있는 문법
+lista[0], lista[1] = lista[1], lista[0]
+
+# for 문을 이용한 정렬 알고리즘
+lista = [93,45,21,30,20,94,66,71,45]
+# 위 리스트를 어떻게 오름차순 정렬 할 것인가?
+# lista.sort()
+# print(lista)
+# 선택정렬 : 0번째 index부터 가장 작은 값을 채워나가는 방식
+# 첫번째 for문은 채워나가야할 index를 의미
+for a in range(len(lista)-1):
+    # 두번째 for문은 비교의대상이 되는 index를 의미
+    for b in range(a+1,len(lista)):
+        if lista[a] > lista[b]:
+            # 자리 change
+            # lista[a],list[b] = lista[b],lista[a]
+            temp = lista[a]
+            lista[a] = lista[b]
+            lista[b] = temp
+print(lista)
+# 버블정렬 방법도 있음 (생략)
+
+# 프로그래머스 행렬의 덧셈
+arr1 = [[1,2],[2,3],[2,3],[2,3],[2,3]]
+arr2 = [[3,4],[5,6],[2,3],[2,3],[2,3]]
+answer = []
+for a in range(len(arr1)):
+    temp = []
+    for b in range(len(arr1[0])):
+        temp.append(arr1[a][b]+arr2[a][b])
+    answer.append(temp) 
+print(answer)
