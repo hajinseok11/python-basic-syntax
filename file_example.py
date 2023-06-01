@@ -57,23 +57,42 @@ import os
 #     if dirTuple[1]=='.py':
 #         fullPath = os.path.join(searchDir,dir)
 #         print(fullPath)
+
 # 그 다음 폴더까지 검색
-searchDir = r'C:\Users\user\Desktop\하진석_project'
-dirList = os.listdir(searchDir)
-for dir in dirList:
-    filename = os.path.join(searchDir, dir)
-    if os.path.isdir(filename):
-        dirList2 = os.listdir(filename)
-        for dir2 in dirList2:
-            dirTuple2 = os.path.splitext(dir2)
-            if(dirTuple2[1]=='.py'):
-                fullPath = os.path.join(filename, dir2)
-                print(fullPath)
-    dirTuple = os.path.splitext(dir)
-    if(dirTuple[1]=='.py'):
-        fullPath = os.path.join(searchDir, dir)
-        print(fullPath)
+# searchDir = r'C:\Users\user\Desktop\하진석_project'
+# dirList = os.listdir(searchDir)
+# for dir in dirList:
+#     filename = os.path.join(searchDir, dir)
+#     if os.path.isdir(filename):
+#         dirList2 = os.listdir(filename)
+#         for dir2 in dirList2:
+#             dirTuple2 = os.path.splitext(dir2)
+#             if(dirTuple2[1]=='.py'):
+#                 fullPath = os.path.join(filename, dir2)
+#                 print(fullPath)
+#     dirTuple = os.path.splitext(dir)
+#     if(dirTuple[1]=='.py'):
+#         fullPath = os.path.join(searchDir, dir)
+#         print(fullPath)
 
 # 모든 폴더까지 검색
+
+def searchRecur(searchDir):
+    dirList = os.listdir(searchDir)
+    try:
+        if not dirList:
+            return
+        for dir in dirList:
+            filename = os.path.join(searchDir, dir)
+            if os.path.isdir(filename):
+                searchRecur(filename)
+            dirTuple = os.path.splitext(dir)
+            if(dirTuple[1]=='.py'):
+                fullPath = os.path.join(searchDir, dir)
+                print(fullPath)
+    except Exception:
+        print("예외입니다")
+searchDir = r'C:\Users\user\Desktop\하진석_project'
+searchRecur(searchDir)
 
 
